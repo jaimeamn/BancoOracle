@@ -1,0 +1,20 @@
+{
+  "name": "cuentasbancooracle",
+  "version": "1.0.0",
+  "description": "Gestion de cuentas corriente del banco Oracle",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaimeamn/BancoOracle.git"
+  },
+  "author": "Jaime Martinez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaimeamn/BancoOracle/issues"
+  },
+  "homepage": "https://github.com/jaimeamn/BancoOracle#readme",
+  "type": "module"
+}
