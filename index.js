@@ -2,28 +2,39 @@ class cliente{
     nombreCliente;
     cedulaCliente;
 }
-const cliente1 = new cliente();
-
-cliente1.nombreCliente = "Jaime";
-cliente1.cedulaCliente = "1143231545";
-
-
-console.log(cliente1)
 
 class cuentaCorriente {
     numeroCuenta; 
-    saldoCuenta;
+    #saldoCuenta;
+    oficina;
+
+    constructor(){
+        this.numeroCuenta = "";
+        this.#saldoCuenta = 0;
+        this.oficina = "";
+    }
 
     depositoEnCuenta(valor){
-        this.saldoCuenta += valor;
+        if(valor > this.#saldoCuenta){
+            this.#saldoCuenta += valor;
+        }
+        
+    }
+
+    retirarEnCuenta(valor){
+        if (valor <= this.#saldoCuenta){
+            this.#saldoCuenta -= valor;
+        } else{
+            console.log("No hay saldo suficiente para debitar")
+        }
+       
     }
 
 }
 
-const cuentaCorriente1 = new cuentaCorriente();
+cuantaJaime = new cuentaCorriente();
 
-cuentaCorriente1.numeroCuenta = "212121"
-cuentaCorriente1.saldoCuenta  = 50000;   
+cuantaJaime.depositoEnCuenta(200);
+console.log(cuantaJaime);
+cuantaJaime.retirarEnCuenta(500);
 
-cuentaCorriente1.depositoEnCuenta(200000)
-console.log(cuentaCorriente1.saldoCuenta)
