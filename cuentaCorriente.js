@@ -1,12 +1,22 @@
-export class cuentaCorriente {
+export class CuentaCorriente {
+    #cliente;
     numeroCuenta; 
-    #saldoCuenta;
     oficina;
+    #saldoCuenta;
+   
+    set cliente(valor){
+        this.#cliente = valor;
+    }
 
-    constructor(){
-        this.numeroCuenta = "";
+    get cliente(){
+        return this.#cliente;
+    }
+
+    constructor(cliente, numeroCuenta, oficina){
+        this.cliente = cliente;
+        this.numeroCuenta = numeroCuenta
+        this.oficina = oficina;
         this.#saldoCuenta = 0;
-        this.oficina = "";
     }
 
     depositoEnCuenta(valor){
@@ -27,6 +37,12 @@ export class cuentaCorriente {
 
     verSaldo(){
         return this.#saldoCuenta;
+    }
+
+    transferirParaCuenta(valor, cuentaDestino){
+        this.retirarEnCuenta(valor);
+        cuentaDestino.depositoEnCuenta(valor);
+
     }
 
 }
