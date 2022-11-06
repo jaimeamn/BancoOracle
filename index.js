@@ -24,3 +24,7 @@ const saldoYessica = cuantaYessica.verSaldo();
 console.log("El saldo de la cuenta de yessica es " + saldoYessica);
 const saldoJaime =  cuantaJaime.verSaldo();
 console.log("El saldo de la cuenta de Jaime es " + saldoJaime);
+
+
+const nCuentas = CuentaCorriente.cantidadCuentas;
+console.log(nCuentas);
