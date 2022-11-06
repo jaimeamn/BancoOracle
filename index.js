@@ -18,7 +18,7 @@ class cuentaCorriente {
         if(valor > this.#saldoCuenta){
             this.#saldoCuenta += valor;
         }
-        
+        return this.#saldoCuenta
     }
 
     retirarEnCuenta(valor){
@@ -27,14 +27,20 @@ class cuentaCorriente {
         } else{
             console.log("No hay saldo suficiente para debitar")
         }
-       
+       return this.#saldoCuenta;
+    }
+
+    verSaldo(){
+        return this.#saldoCuenta;
     }
 
 }
 
 cuantaJaime = new cuentaCorriente();
 
-cuantaJaime.depositoEnCuenta(200);
-console.log(cuantaJaime);
-cuantaJaime.retirarEnCuenta(500);
-
+let saldo =  cuantaJaime.verSaldo();
+console.log("El saldo de la cuenta es " + saldo);
+saldo = cuantaJaime.depositoEnCuenta(200);
+console.log("El saldo de la cuenta es " + saldo);
+saldo = cuantaJaime.retirarEnCuenta(50)
+console.log("El saldo de la cuenta es " + saldo);
