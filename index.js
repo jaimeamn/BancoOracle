@@ -1,12 +1,17 @@
 import {Cliente} from "./cliente.js";
-import {CuentaCorriente} from "./cuentaCorriente.js";
-import { CuentaAhorro } from "./CuentaAhorro.js";
-import {Cuenta} from "./cuenta.js";
-
+import {CuentaCorriente} from "./Cuentas.js/cuentaCorriente.js";
+import { CuentaAhorro } from "./Cuentas.js/CuentaAhorro.js";
+import {Cuenta} from "./Cuentas.js/cuenta.js";
+import { Empleado } from "./Cuentas.js/Empleados/Empleado.js";
+import { Gerente } from "./Cuentas.js/Empleados/Gerente.js";
+import { Director } from "./Cuentas.js/Empleados/Director.js";
+import { SistemaAutenticacion } from "./SistemaAutenticacion.js";
 
 //instanciar clientes(Crearlos)
 
 const cliente  = new Cliente("Jaime", "12547655", "2121414");
+cliente.asignarClave("1234")
+console.log(SistemaAutenticacion.login(cliente, "1234"))
 const cliente2 = new Cliente("Yessica",  "12545555", "54785");
 
 //Instanciar Cuenta Corriente
@@ -33,3 +38,15 @@ console.log(nCuentas);
 
 const cuentaAhorroJaime = new CuentaAhorro(cliente, "123456", "01", 0)
 console.log(cuentaAhorroJaime);
+
+
+const empleado = new Empleado("Jaime Martinez", "1143231049", 500000);
+empleado.asignarClave("12345")
+const gerente = new Gerente("Juan Noguera", " 4554545", 400000);
+const director = new Director("Yessica Martinez", "11245785", 800000);
+
+console.log(empleado.bonificacion());
+console.log(gerente.bonificacion());
+console.log(director.bonificacion());
+
+console.log(SistemaAutenticacion.login(empleado, "12345"))

@@ -1,4 +1,4 @@
-import { Cliente } from "./cliente.js";
+import { Cliente } from "../cliente.js";
 import { Cuenta } from "./cuenta.js";
 
 export class CuentaCorriente extends Cuenta {
@@ -11,7 +11,7 @@ export class CuentaCorriente extends Cuenta {
 
     }
     retirarEnCuenta(valor){
-        super.retirarEnCuenta(valor, 5);
+        super._retirarEnCuenta(valor, 5);
      
     }
 
