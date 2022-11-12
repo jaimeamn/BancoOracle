@@ -14,9 +14,10 @@ export class Empleado{
         this.#clave = clave;
     }
 
-    get clave(){
-        return this.#clave;
+    autenticable(clave){
+        return clave == this.#clave;
     }
+    
     bonificacion(){
      return this.#salario;
     }
